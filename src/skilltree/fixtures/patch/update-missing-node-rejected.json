@@ -1,0 +1,34 @@
+{
+  "name": "update 不存在的节点直接拒绝",
+  "why": "静默忽略会让 AI 以为改成功了，下一轮基于错误的认知继续改。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "edges": []
+  },
+  "patch": {
+    "update": [
+      {
+        "id": "ghost",
+        "title": "无"
+      }
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "reasonContains": "不存在"
+  }
+}

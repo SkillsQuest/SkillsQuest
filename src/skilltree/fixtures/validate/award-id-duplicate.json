@@ -1,0 +1,47 @@
+{
+  "name": "awards id 重复是 error，顺序非单调不是",
+  "why": "编辑器的 award id 生成有碰撞隐患，服务端必须查重。但顺序不做要求 —— 引擎按 need 求值，编辑器能产出非单调序列，不能拒收。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "edges": [],
+    "awards": [
+      {
+        "id": "late",
+        "name": "后",
+        "need": 5
+      },
+      {
+        "id": "early",
+        "name": "先",
+        "need": 1
+      },
+      {
+        "id": "late",
+        "name": "撞了",
+        "need": 3
+      }
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "AWARD_ID_DUPLICATE",
+        "path": "/awards/2/id"
+      }
+    ]
+  }
+}

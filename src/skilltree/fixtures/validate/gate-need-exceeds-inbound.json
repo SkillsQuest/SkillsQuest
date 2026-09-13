@@ -1,0 +1,58 @@
+{
+  "name": "gate.need 超过入边数只是 warning，且不改写文档",
+  "why": "作者写 need=5 但只连了 2 条边，可能是打算后续补边。钳制写回文档会让意图永久丢失，所以入库但告知（§3.3）。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "p1",
+        "title": "P1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "p2",
+        "title": "P2",
+        "x": 0,
+        "y": 200
+      },
+      {
+        "id": "t",
+        "title": "T",
+        "x": 300,
+        "y": 0,
+        "gate": {
+          "need": 5
+        }
+      }
+    ],
+    "edges": [
+      [
+        "p1",
+        "t"
+      ],
+      [
+        "p2",
+        "t"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "issues": [
+      {
+        "level": "warning",
+        "code": "GATE_NEED_EXCEEDS_INBOUND",
+        "path": "/nodes/2/gate/need",
+        "detail": {
+          "need": 5,
+          "inbound": 2
+        }
+      }
+    ]
+  }
+}

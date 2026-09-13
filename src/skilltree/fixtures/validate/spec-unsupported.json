@@ -1,0 +1,30 @@
+{
+  "name": "不认识的 spec major 单独一个错误码",
+  "why": "客户端要能区分「请升级」和「文档损坏」，两者的用户动作完全不同。",
+  "doc": {
+    "spec": "skilltree/2",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "edges": []
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "SPEC_UNSUPPORTED",
+        "path": "/spec"
+      }
+    ]
+  }
+}

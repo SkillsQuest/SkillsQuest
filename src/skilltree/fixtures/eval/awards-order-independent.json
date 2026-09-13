@@ -1,0 +1,77 @@
+{
+  "name": "awards 按 need 求值，与数组顺序无关",
+  "why": "编辑器能产出非单调序列（§3.3 明确不拒收），引擎不能依赖顺序。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "n1",
+        "title": "N1",
+        "x": 120,
+        "y": 0
+      },
+      {
+        "id": "n2",
+        "title": "N2",
+        "x": 240,
+        "y": 0
+      },
+      {
+        "id": "n3",
+        "title": "N3",
+        "x": 360,
+        "y": 0
+      }
+    ],
+    "edges": [],
+    "awards": [
+      {
+        "id": "late",
+        "name": "后",
+        "need": 3,
+        "gem": 5
+      },
+      {
+        "id": "early",
+        "name": "先",
+        "need": 1,
+        "gem": 1
+      },
+      {
+        "id": "mid",
+        "name": "中",
+        "need": 2,
+        "gem": 2
+      }
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "n1",
+        "n2"
+      ],
+      "states": {
+        "n1": "done",
+        "n2": "done",
+        "n3": "open"
+      },
+      "progress": {
+        "count": 2,
+        "earned": 2,
+        "spent": 0,
+        "stars": 2,
+        "level": 1
+      },
+      "awards": {
+        "early": true,
+        "mid": true,
+        "late": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "无前置的孤儿节点直接 open",
+  "why": "孤儿是特性不是错误（§3.3）。曾经想当成校验 error，那会误杀「起步节点」。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "solo",
+        "title": "SOLO",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "other",
+        "title": "OTHER",
+        "x": 300,
+        "y": 0
+      }
+    ],
+    "edges": []
+  },
+  "cases": [
+    {
+      "done": [],
+      "states": {
+        "solo": "open",
+        "other": "open"
+      },
+      "progress": {
+        "count": 0,
+        "earned": 0,
+        "spent": 0,
+        "stars": 0,
+        "level": 1
+      }
+    }
+  ]
+}

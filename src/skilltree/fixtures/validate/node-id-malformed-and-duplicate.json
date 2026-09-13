@@ -1,0 +1,47 @@
+{
+  "name": "节点 id 格式非法与重复都是 error",
+  "why": "多生产者协作（编辑器 / AI / 脚本）的前提。重复 id 会让进度记录指向歧义。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "ok",
+        "title": "OK",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "Bad_Caps",
+        "title": "BAD_CAPS",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "ok",
+        "title": "OK",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": []
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "NODE_ID_MALFORMED",
+        "path": "/nodes/1/id"
+      },
+      {
+        "level": "error",
+        "code": "NODE_ID_DUPLICATE",
+        "path": "/nodes/2/id"
+      }
+    ]
+  }
+}

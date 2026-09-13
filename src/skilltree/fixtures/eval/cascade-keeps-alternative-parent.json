@@ -1,0 +1,66 @@
+{
+  "name": "还有别的前置撑着时不连带取消",
+  "why": "need 缺省为 1：两个前置里掉一个，后继依然成立，不该被误杀。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "p1",
+        "title": "P1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "p2",
+        "title": "P2",
+        "x": 0,
+        "y": 200
+      },
+      {
+        "id": "t",
+        "title": "T",
+        "x": 300,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "p1",
+        "t"
+      ],
+      [
+        "p2",
+        "t"
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "p1",
+        "p2",
+        "t"
+      ],
+      "states": {
+        "p1": "done",
+        "p2": "done",
+        "t": "done"
+      },
+      "progress": {
+        "count": 3,
+        "earned": 3,
+        "spent": 0,
+        "stars": 3,
+        "level": 1
+      },
+      "cascade": {
+        "node": "p1",
+        "expect": []
+      }
+    }
+  ]
+}

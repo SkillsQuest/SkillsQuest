@@ -1,0 +1,86 @@
+{
+  "name": "删旧节点 + 新增同 id 节点：先删后增，不互吞",
+  "why": "demo 的 applyPatch 是先增后删，这个很自然的改法会互吞：新增的先进去，紧接着被 drop 按 id 删掉，净效果是节点凭空消失。§3.4 因此把顺序钉成 drop → dropEdges → 新增 → update → set。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "patch": {
+    "drop": [
+      "b"
+    ],
+    "nodes": [
+      {
+        "id": "b",
+        "title": "换了的 B",
+        "x": 400,
+        "y": 0,
+        "kind": "boss"
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "日语",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "b",
+          "title": "换了的 B",
+          "x": 400,
+          "y": 0,
+          "kind": "boss"
+        }
+      ],
+      "edges": [
+        [
+          "a",
+          "b"
+        ]
+      ]
+    }
+  }
+}

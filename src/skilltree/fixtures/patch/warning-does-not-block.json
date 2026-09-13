@@ -1,0 +1,81 @@
+{
+  "name": "只产生 warning 的 Patch 照常应用",
+  "why": "warning 是「入库但告知」，不是拒绝理由。拒绝只看 error。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "t",
+        "title": "T",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "t"
+      ]
+    ]
+  },
+  "patch": {
+    "update": [
+      {
+        "id": "t",
+        "gate": {
+          "need": 9
+        }
+      }
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "日语",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "t",
+          "title": "T",
+          "x": 200,
+          "y": 0,
+          "gate": {
+            "need": 9
+          }
+        }
+      ],
+      "edges": [
+        [
+          "a",
+          "t"
+        ]
+      ]
+    },
+    "issueCodes": [
+      "GATE_NEED_EXCEEDS_INBOUND"
+    ]
+  }
+}

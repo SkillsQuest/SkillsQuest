@@ -1,0 +1,59 @@
+{
+  "name": "菱形（同一节点两条路径汇合）不是环",
+  "why": "最容易写错的地方：只用 visited 集合而不区分「在当前栈上」，菱形会被误判成环。而菱形是技能树里极常见的形状。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "root",
+        "title": "ROOT",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "l",
+        "title": "L",
+        "x": 200,
+        "y": 0
+      },
+      {
+        "id": "r",
+        "title": "R",
+        "x": 200,
+        "y": 200
+      },
+      {
+        "id": "join",
+        "title": "JOIN",
+        "x": 400,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "root",
+        "l"
+      ],
+      [
+        "root",
+        "r"
+      ],
+      [
+        "l",
+        "join"
+      ],
+      [
+        "r",
+        "join"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "issues": []
+  }
+}

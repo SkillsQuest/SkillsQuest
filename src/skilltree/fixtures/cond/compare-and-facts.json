@@ -1,0 +1,131 @@
+{
+  "name": "比较读的是事实，读不到就是「不知道」",
+  "why": "缺事实必须是三值里的 None，不能当 0 —— 当 0 的话「敏捷 ≥ 0」这种条件会凭空成立。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件用例"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "fire",
+        "title": "火球",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "ice",
+        "title": "冰锥",
+        "x": 100,
+        "y": 0
+      },
+      {
+        "id": "target",
+        "title": "目标",
+        "x": 50,
+        "y": 120,
+        "gate": {
+          "cost": 2
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "cases": [
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.str": 15
+        }
+      },
+      "cond": {
+        "gte": [
+          {
+            "get": "attr.str"
+          },
+          14
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.str": 13
+        }
+      },
+      "cond": {
+        "gte": [
+          {
+            "get": "attr.str"
+          },
+          14
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {}
+      },
+      "cond": {
+        "gte": [
+          {
+            "get": "attr.str"
+          },
+          14
+        ]
+      },
+      "verdict": null
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "tag.evil": true
+        }
+      },
+      "cond": {
+        "eq": [
+          {
+            "get": "tag.evil"
+          },
+          false
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.faction": "law"
+        }
+      },
+      "cond": {
+        "in": [
+          {
+            "get": "attr.faction"
+          },
+          [
+            "law",
+            "chaos"
+          ]
+        ]
+      },
+      "verdict": true
+    }
+  ]
+}

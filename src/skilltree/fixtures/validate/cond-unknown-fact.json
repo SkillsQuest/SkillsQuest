@@ -1,0 +1,52 @@
+{
+  "name": "认不出的事实名是 error",
+  "why": "把 attr.str 写成 attrs.str 的结果是「永远算不出来」，而作者只看到节点点不亮。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件校验"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 100,
+        "y": 0,
+        "gate": {
+          "when": {
+            "gte": [
+              {
+                "get": "attrs.str"
+              },
+              14
+            ]
+          }
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "COND_FACT_UNKNOWN",
+        "path": "/nodes/1/gate/when/gte/0",
+        "detail": {
+          "key": "attrs.str"
+        }
+      }
+    ]
+  }
+}

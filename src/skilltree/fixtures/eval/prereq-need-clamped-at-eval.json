@@ -1,0 +1,81 @@
+{
+  "name": "gate.need 超过入边数时，求值取 min",
+  "why": "作者写 need=5 但只连了 2 条边，可能是打算后续补边。钳制写回文档会让意图永久丢失，所以只在求值时取 min（§3.3 warning 不改写）。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "p1",
+        "title": "P1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "p2",
+        "title": "P2",
+        "x": 0,
+        "y": 200
+      },
+      {
+        "id": "t",
+        "title": "T",
+        "x": 300,
+        "y": 0,
+        "gate": {
+          "need": 5
+        }
+      }
+    ],
+    "edges": [
+      [
+        "p1",
+        "t"
+      ],
+      [
+        "p2",
+        "t"
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "p1"
+      ],
+      "states": {
+        "p1": "done",
+        "p2": "open",
+        "t": "locked"
+      },
+      "progress": {
+        "count": 1,
+        "earned": 1,
+        "spent": 0,
+        "stars": 1,
+        "level": 1
+      }
+    },
+    {
+      "done": [
+        "p1",
+        "p2"
+      ],
+      "states": {
+        "p1": "done",
+        "p2": "done",
+        "t": "open"
+      },
+      "progress": {
+        "count": 2,
+        "earned": 2,
+        "spent": 0,
+        "stars": 2,
+        "level": 1
+      }
+    }
+  ]
+}

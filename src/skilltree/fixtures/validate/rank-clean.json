@@ -1,0 +1,15 @@
+{
+  "name": "加点树声明齐全就是干净的（点数按属性算也算）",
+  "why": "maxRank ＋ 点数池（含按属性算）都声明了 rank/alloc，pointsAttr 指向的属性也在属性表里，就不该报任何 issue。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "天赋" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0, "maxRank": 3 }],
+    "edges": [],
+    "attrs": [{ "key": "lvl", "name": "等级", "type": "number" }],
+    "rules": { "points": 1, "pointsAttr": "lvl" },
+    "requires": ["attr/self", "rank/alloc"]
+  },
+  "expect": { "ok": true, "issues": [] }
+}

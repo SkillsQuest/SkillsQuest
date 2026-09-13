@@ -1,0 +1,48 @@
+{
+  "name": "条件形状不对是 error，不是「求值时当不成立」",
+  "why": "写错的条件表现为「这个节点永远点不亮」，没有任何地方会说它错了。所以保存时就得拒。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件校验"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 100,
+        "y": 0,
+        "gate": {
+          "when": {
+            "gte": [
+              {
+                "get": "attr.str"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "COND_MALFORMED",
+        "path": "/nodes/1/gate/when/gte"
+      }
+    ]
+  }
+}

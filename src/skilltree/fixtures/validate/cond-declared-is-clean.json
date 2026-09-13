@@ -1,0 +1,60 @@
+{
+  "name": "声明了能力的条件正常入库",
+  "why": "双向绑定只拦「用了没声明」，声明齐全就不该有任何 issue。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件校验"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 100,
+        "y": 0,
+        "gate": {
+          "when": {
+            "all": [
+              {
+                "has": [
+                  "a"
+                ]
+              },
+              {
+                "gte": [
+                  {
+                    "get": "attr.str"
+                  },
+                  14
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "edges": [],
+    "attrs": [
+      {
+        "key": "str",
+        "name": "力量",
+        "type": "number"
+      }
+    ],
+    "requires": [
+      "cond/expr",
+      "attr/self"
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "issues": []
+  }
+}

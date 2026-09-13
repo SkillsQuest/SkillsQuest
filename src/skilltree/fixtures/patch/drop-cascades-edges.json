@@ -1,0 +1,75 @@
+{
+  "name": "删节点时关联边级联删除",
+  "why": "留下悬空边会让文档语义校验直接 error（EDGE_ENDPOINT_MISSING）。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ]
+    ]
+  },
+  "patch": {
+    "drop": [
+      "b"
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "日语",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "c",
+          "title": "C",
+          "x": 400,
+          "y": 0
+        }
+      ],
+      "edges": []
+    }
+  }
+}

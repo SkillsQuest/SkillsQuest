@@ -1,0 +1,92 @@
+{
+  "name": "等级 = floor(完成数 / 4) + 1，gate.lv 卡在它上面",
+  "why": "v1 固定曲线。参数化是将来的 formulas 能力，缺省值必须等于这里。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "n1",
+        "title": "N1",
+        "x": 120,
+        "y": 0
+      },
+      {
+        "id": "n2",
+        "title": "N2",
+        "x": 240,
+        "y": 0
+      },
+      {
+        "id": "n3",
+        "title": "N3",
+        "x": 360,
+        "y": 0
+      },
+      {
+        "id": "n4",
+        "title": "N4",
+        "x": 480,
+        "y": 0
+      },
+      {
+        "id": "gated",
+        "title": "GATED",
+        "x": 600,
+        "y": 0,
+        "gate": {
+          "lv": 2
+        }
+      }
+    ],
+    "edges": []
+  },
+  "cases": [
+    {
+      "done": [
+        "n1",
+        "n2",
+        "n3"
+      ],
+      "states": {
+        "n1": "done",
+        "n2": "done",
+        "n3": "done",
+        "n4": "open",
+        "gated": "blocked"
+      },
+      "progress": {
+        "count": 3,
+        "earned": 3,
+        "spent": 0,
+        "stars": 3,
+        "level": 1
+      }
+    },
+    {
+      "done": [
+        "n1",
+        "n2",
+        "n3",
+        "n4"
+      ],
+      "states": {
+        "n1": "done",
+        "n2": "done",
+        "n3": "done",
+        "n4": "done",
+        "gated": "open"
+      },
+      "progress": {
+        "count": 4,
+        "earned": 4,
+        "spent": 0,
+        "stars": 4,
+        "level": 2
+      }
+    }
+  ]
+}

@@ -9,13 +9,13 @@
 
 ![桌面端](https://img.shields.io/badge/桌面端-Windows%20%7C%20macOS%20%7C%20Linux-purple?style=flat&logo=tauri&logoColor=white) ![移动端](https://img.shields.io/badge/移动端-Android%20%7C%20iOS-00A98F?style=flat&logo=react&logoColor=white)
 
-把想学的东西种成一棵树。技能树式的学习与习惯追踪。
+像点技能树一样学习新技能。掌握专属于人类的技能。
 
 [🏠 官网](https://skillsquest.net) | [🌐 网页版](https://skillsquest.app) | [🇬🇧 English](docs/README.en.md)
 
 </div>
 
-> SkillsQuest 是闭源软件，本仓库只用于发布安装包与接收反馈。
+> 本仓库用于发布安装包、接收反馈，并公开技能树编辑器与 `skilltree/1` 文档格式的源码。
 
 ## ⬇️ 下载
 
@@ -44,6 +44,26 @@
 
 校验：`shasum -a 256 -c SHA256SUMS --ignore-missing`
 
+## 🧩 源码
+
+本仓库同时是 **SkillsQuest 技能树编辑器**的源码仓库：技能树的文档格式
+`skilltree/1`、它的引擎，以及编辑这份文档的画布。独立的前端工程，不依赖
+SkillsQuest 的服务端 —— 编辑器读写一份 JSON 文档，树存在浏览器本地。
+
+```bash
+npm install
+npm run dev
+```
+
+需要 Node ≥ 22。详情见 [技能树编辑器](docs/skilltree-editor.md)，
+文档格式见 [`skilltree/1`](docs/skilltree-spec.md)。
+
+授权按 [BSL 1.1](LICENSE)：可自由查看、修改、再分发，个人、教学、研究与
+内部评估可直接使用；**作为商业产品或服务提供给第三方，需要单独的
+Commercial License**。2030-09-13 起自动转为 Apache-2.0。商业授权请开
+[issue](https://github.com/SkillsQuest/SkillsQuest/issues) 或经
+[skillsquest.net](https://skillsquest.net) 联系。
+
 ---
 
-© 2026 SkillsQuest. 保留所有权利，本仓库不授予任何软件许可。
+© 2026 SkillsQuest. 保留所有权利。本仓库的代码按 [BSL 1.1](LICENSE) 授权。

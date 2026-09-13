@@ -1,0 +1,188 @@
+{
+  "name": "「不知道」一路传到顶，not 也不许把它翻成成立",
+  "why": "两值实现里 not(缺事实) 会变成 True —— 一条读不到的属性反而把门打开了。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件用例"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "fire",
+        "title": "火球",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "ice",
+        "title": "冰锥",
+        "x": 100,
+        "y": 0
+      },
+      {
+        "id": "target",
+        "title": "目标",
+        "x": 50,
+        "y": 120,
+        "gate": {
+          "cost": 2
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "cases": [
+    {
+      "node": "target",
+      "state": {
+        "ranks": {}
+      },
+      "cond": {
+        "not": {
+          "gte": [
+            {
+              "get": "attr.str"
+            },
+            14
+          ]
+        }
+      },
+      "verdict": null
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.str": 10
+        }
+      },
+      "cond": {
+        "not": {
+          "gte": [
+            {
+              "get": "attr.str"
+            },
+            14
+          ]
+        }
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.str": 10
+        }
+      },
+      "cond": {
+        "all": [
+          {
+            "gte": [
+              {
+                "get": "attr.str"
+              },
+              14
+            ]
+          },
+          {
+            "gte": [
+              {
+                "get": "attr.dex"
+              },
+              1
+            ]
+          }
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.str": 20
+        }
+      },
+      "cond": {
+        "all": [
+          {
+            "gte": [
+              {
+                "get": "attr.str"
+              },
+              14
+            ]
+          },
+          {
+            "gte": [
+              {
+                "get": "attr.dex"
+              },
+              1
+            ]
+          }
+        ]
+      },
+      "verdict": null
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {
+          "fire": 1
+        }
+      },
+      "cond": {
+        "any": [
+          {
+            "has": [
+              "fire"
+            ]
+          },
+          {
+            "gte": [
+              {
+                "get": "attr.dex"
+              },
+              1
+            ]
+          }
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {}
+      },
+      "cond": {
+        "any": [
+          {
+            "has": [
+              "fire"
+            ]
+          },
+          {
+            "gte": [
+              {
+                "get": "attr.dex"
+              },
+              1
+            ]
+          }
+        ]
+      },
+      "verdict": null
+    }
+  ]
+}

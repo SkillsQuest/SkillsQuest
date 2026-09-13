@@ -1,0 +1,36 @@
+{
+  "name": "带条件的成就：完成数够 ＋ 附加条件成立才达成（#174 阶段 6）",
+  "why": "成就=条件+动作。got 要同时看完成数与 when；when 读得到 attr.str 才算数，读不到就是没达成。这条两端必须一致。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "成就条件" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0 }],
+    "edges": [],
+    "attrs": [{ "key": "str", "name": "力量", "type": "number" }],
+    "awards": [
+      { "id": "aw", "name": "力者", "need": 1, "when": { "gte": [{ "get": "attr.str" }, 10] } }
+    ],
+    "requires": ["cond/expr", "attr/self"]
+  },
+  "cases": [
+    {
+      "state": { "ranks": { "a": 1 }, "facts": { "attr.str": 15 } },
+      "states": { "a": "done" },
+      "progress": { "count": 1, "earned": 1, "spent": 0, "stars": 1, "level": 1 },
+      "awards": { "aw": true }
+    },
+    {
+      "state": { "ranks": { "a": 1 } },
+      "states": { "a": "done" },
+      "progress": { "count": 1, "earned": 1, "spent": 0, "stars": 1, "level": 1 },
+      "awards": { "aw": false }
+    },
+    {
+      "state": { "ranks": {}, "facts": { "attr.str": 15 } },
+      "states": { "a": "open" },
+      "progress": { "count": 0, "earned": 0, "spent": 0, "stars": 0, "level": 1 },
+      "awards": { "aw": false }
+    }
+  ]
+}

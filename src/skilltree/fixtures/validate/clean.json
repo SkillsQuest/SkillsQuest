@@ -1,0 +1,50 @@
+{
+  "name": "干净文档没有任何 issue",
+  "why": "先钉住基线：一份正常文档不该报任何东西，否则后面的 case 都失去意义。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      },
+      {
+        "id": "orphan",
+        "title": "ORPHAN",
+        "x": 0,
+        "y": 200
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ]
+    ],
+    "awards": [
+      {
+        "id": "aw1",
+        "name": "开口",
+        "need": 2,
+        "gem": 3
+      }
+    ],
+    "requires": []
+  },
+  "expect": {
+    "ok": true,
+    "issues": []
+  }
+}

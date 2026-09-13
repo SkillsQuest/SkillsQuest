@@ -1,0 +1,68 @@
+{
+  "name": "只删边，节点留着",
+  "why": "demo 的 Patch 表达不了「删一条边」，只能整树替换 —— 那会顺带冲掉手摆坐标。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "patch": {
+    "dropEdges": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "日语",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "b",
+          "title": "B",
+          "x": 200,
+          "y": 0
+        }
+      ],
+      "edges": []
+    }
+  }
+}

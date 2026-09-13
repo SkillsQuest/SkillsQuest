@@ -1,0 +1,78 @@
+{
+  "name": "rules.strict 与 gate.all 都表示「全部前置」",
+  "why": "两个入口同义。任一为真就按入边数求值，缺省则是 need ?? 1。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "p1",
+        "title": "P1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "p2",
+        "title": "P2",
+        "x": 0,
+        "y": 200
+      },
+      {
+        "id": "any",
+        "title": "ANY",
+        "x": 300,
+        "y": 0
+      },
+      {
+        "id": "all",
+        "title": "ALL",
+        "x": 300,
+        "y": 200,
+        "gate": {
+          "all": true
+        }
+      }
+    ],
+    "edges": [
+      [
+        "p1",
+        "any"
+      ],
+      [
+        "p2",
+        "any"
+      ],
+      [
+        "p1",
+        "all"
+      ],
+      [
+        "p2",
+        "all"
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "p1"
+      ],
+      "states": {
+        "p1": "done",
+        "p2": "open",
+        "any": "open",
+        "all": "locked"
+      },
+      "progress": {
+        "count": 1,
+        "earned": 1,
+        "spent": 0,
+        "stars": 1,
+        "level": 1
+      }
+    }
+  ]
+}

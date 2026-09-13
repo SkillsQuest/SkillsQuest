@@ -1,0 +1,22 @@
+{
+  "name": "带条件的成就不许发宝石（when 与 gem 互斥）",
+  "why": "when 能读用户自报的属性，再挂 gem 就是自报即印钞。带条件的成就是纯认可，发宝石的成就按完成数结算。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "成就" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0 }],
+    "edges": [],
+    "attrs": [{ "key": "str", "name": "力量", "type": "number" }],
+    "awards": [
+      { "id": "aw", "name": "力者", "need": 1, "gem": 5, "when": { "gte": [{ "get": "attr.str" }, 10] } }
+    ],
+    "requires": ["cond/expr", "attr/self"]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      { "level": "error", "code": "AWARD_COND_WITH_GEM", "path": "/awards/0", "detail": { "id": "aw" } }
+    ]
+  }
+}

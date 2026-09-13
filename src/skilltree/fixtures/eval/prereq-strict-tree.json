@@ -1,0 +1,66 @@
+{
+  "name": "rules.strict 把整棵树都变成「全部前置」",
+  "why": "strict 是树级开关，覆盖每个节点的 gate.need。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "p1",
+        "title": "P1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "p2",
+        "title": "P2",
+        "x": 0,
+        "y": 200
+      },
+      {
+        "id": "t",
+        "title": "T",
+        "x": 300,
+        "y": 0,
+        "gate": {
+          "need": 1
+        }
+      }
+    ],
+    "edges": [
+      [
+        "p1",
+        "t"
+      ],
+      [
+        "p2",
+        "t"
+      ]
+    ],
+    "rules": {
+      "strict": true
+    }
+  },
+  "cases": [
+    {
+      "done": [
+        "p1"
+      ],
+      "states": {
+        "p1": "done",
+        "p2": "open",
+        "t": "locked"
+      },
+      "progress": {
+        "count": 1,
+        "earned": 1,
+        "spent": 0,
+        "stars": 1,
+        "level": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "声明了引擎不认识的能力就拒绝",
+  "why": "§3.6：不拦的话，L2 的「未知字段忽略保留」会让新特性在老引擎上静默错误求值 —— 这正是能力机制要防的事。v1 已登记能力表是空的。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/streak-days"
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "CAPABILITY_UNKNOWN",
+        "path": "/requires/0"
+      }
+    ]
+  }
+}

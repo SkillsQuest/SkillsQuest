@@ -1,0 +1,44 @@
+{
+  "name": "加点树：档位上限、点数池、跨层投入要求（能力 rank/alloc）",
+  "why": "maxRank>1 的节点投满才 done、中途是可继续投的 open；点数池空了再投不动就是 blocked；跨层要求靠 tree.used。这些两端必须逐位一致。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "天赋" },
+    "layout": "flow",
+    "nodes": [
+      { "id": "a", "title": "根", "x": 0, "y": 0, "maxRank": 3 },
+      { "id": "b", "title": "二层", "x": 0, "y": 100, "maxRank": 2,
+        "gate": { "when": { "gte": [{ "get": "tree.used" }, 3] } } },
+      { "id": "c", "title": "支", "x": 100, "y": 100, "maxRank": 1 }
+    ],
+    "edges": [["a", "b"], ["a", "c"]],
+    "rules": { "points": 5 },
+    "requires": ["cond/expr", "rank/alloc"]
+  },
+  "cases": [
+    {
+      "state": { "ranks": {} },
+      "states": { "a": "open", "b": "locked", "c": "locked" },
+      "progress": { "count": 0, "earned": 0, "spent": 0, "stars": 0, "level": 1 },
+      "points": { "total": 5, "used": 0, "free": 5 }
+    },
+    {
+      "state": { "ranks": { "a": 1 } },
+      "states": { "a": "open", "b": "blocked", "c": "open" },
+      "progress": { "count": 1, "earned": 1, "spent": 0, "stars": 1, "level": 1 },
+      "points": { "total": 5, "used": 1, "free": 4 }
+    },
+    {
+      "state": { "ranks": { "a": 3 } },
+      "states": { "a": "done", "b": "open", "c": "open" },
+      "progress": { "count": 1, "earned": 1, "spent": 0, "stars": 1, "level": 1 },
+      "points": { "total": 5, "used": 3, "free": 2 }
+    },
+    {
+      "state": { "ranks": { "a": 3, "b": 2 } },
+      "states": { "a": "done", "b": "done", "c": "blocked" },
+      "progress": { "count": 2, "earned": 2, "spent": 0, "stars": 2, "level": 1 },
+      "points": { "total": 5, "used": 5, "free": 0 }
+    }
+  ]
+}

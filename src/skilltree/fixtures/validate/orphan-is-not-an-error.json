@@ -1,0 +1,30 @@
+{
+  "name": "孤儿节点是特性，不是错误",
+  "why": "§3.3 明确：无前置即 open。曾想当成 error，那会误杀每棵树的起步节点。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "solo",
+        "title": "SOLO",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "also",
+        "title": "ALSO",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": []
+  },
+  "expect": {
+    "ok": true,
+    "issues": []
+  }
+}

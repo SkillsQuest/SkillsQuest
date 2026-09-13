@@ -1,0 +1,73 @@
+{
+  "name": "新增已存在的边是幂等的，不报错",
+  "why": "Patch 是增量描述，「确保这条边存在」是常见意图。这里和「新增重复节点 id」的处理刻意不同：边没有身份，节点有。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "patch": {
+    "edges": [
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "日语",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "b",
+          "title": "B",
+          "x": 200,
+          "y": 0
+        }
+      ],
+      "edges": [
+        [
+          "a",
+          "b"
+        ]
+      ]
+    }
+  }
+}

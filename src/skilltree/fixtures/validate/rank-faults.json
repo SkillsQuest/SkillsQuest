@@ -1,0 +1,20 @@
+{
+  "name": "maxRank 非法、pointsAttr 指向没定义的属性都是 error",
+  "why": "maxRank 得是 ≥1 的整数；点数按属性算的话那条属性必须先在属性表里定义（与条件里的属性依赖同一类检查）。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "天赋" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0, "maxRank": 0 }],
+    "edges": [],
+    "rules": { "pointsAttr": "ghost" },
+    "requires": ["rank/alloc"]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      { "level": "error", "code": "MAXRANK_INVALID", "path": "/nodes/0/maxRank", "detail": { "maxRank": 0 } },
+      { "level": "error", "code": "POINTS_ATTR_UNKNOWN", "path": "/rules/pointsAttr", "detail": { "attr": "ghost" } }
+    ]
+  }
+}

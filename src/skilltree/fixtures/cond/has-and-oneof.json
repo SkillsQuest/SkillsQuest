@@ -1,0 +1,141 @@
+{
+  "name": "has 看档位，oneOf 是互斥组",
+  "why": "「选了 A 就不能选 B」不能画成互为前置（服务端拒环，而且语义是死锁），互斥组是它的表达方式。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件用例"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "fire",
+        "title": "火球",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "ice",
+        "title": "冰锥",
+        "x": 100,
+        "y": 0
+      },
+      {
+        "id": "target",
+        "title": "目标",
+        "x": 50,
+        "y": 120,
+        "gate": {
+          "cost": 2
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "cases": [
+    {
+      "node": "target",
+      "state": {
+        "ranks": {
+          "fire": 1
+        }
+      },
+      "cond": {
+        "has": [
+          "fire"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {
+          "fire": 2
+        }
+      },
+      "cond": {
+        "has": [
+          "fire",
+          3
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {
+          "fire": 3
+        }
+      },
+      "cond": {
+        "has": [
+          "fire",
+          3
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {}
+      },
+      "cond": {
+        "has": [
+          "fire"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {
+          "fire": 1
+        }
+      },
+      "cond": {
+        "oneOf": [
+          "fire",
+          "ice"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {
+          "fire": 1,
+          "ice": 1
+        }
+      },
+      "cond": {
+        "oneOf": [
+          "fire",
+          "ice"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {}
+      },
+      "cond": {
+        "oneOf": [
+          "fire",
+          "ice"
+        ]
+      },
+      "verdict": true
+    }
+  ]
+}

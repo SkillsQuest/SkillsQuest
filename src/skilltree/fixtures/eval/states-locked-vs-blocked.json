@@ -1,0 +1,83 @@
+{
+  "name": "locked 与 blocked 必须区分",
+  "why": "前置不够是 locked（还轮不到），前置够但资源/等级不够是 blocked（够格但差条件）。两者在 UI 上是完全不同的话术，合并过就再也分不开了。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0,
+        "gate": {
+          "cost": 5
+        }
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ]
+    ],
+    "res": {
+      "name": "假名",
+      "icon": "star"
+    }
+  },
+  "cases": [
+    {
+      "done": [],
+      "states": {
+        "a": "open",
+        "b": "locked",
+        "c": "locked"
+      },
+      "progress": {
+        "count": 0,
+        "earned": 0,
+        "spent": 0,
+        "stars": 0,
+        "level": 1
+      }
+    },
+    {
+      "done": [
+        "a"
+      ],
+      "states": {
+        "a": "done",
+        "b": "blocked",
+        "c": "locked"
+      },
+      "progress": {
+        "count": 1,
+        "earned": 3,
+        "spent": 0,
+        "stars": 3,
+        "level": 1
+      }
+    }
+  ]
+}

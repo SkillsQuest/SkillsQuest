@@ -1,0 +1,45 @@
+{
+  "name": "两节点互为前置也是环",
+  "why": "最小的死锁形态，也是最容易在编辑器里手滑连出来的。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "a"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "GRAPH_HAS_CYCLE",
+        "path": "/edges"
+      }
+    ]
+  }
+}

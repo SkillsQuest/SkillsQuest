@@ -1,0 +1,44 @@
+{
+  "name": "边指向不存在的节点是 error",
+  "why": "引擎运行时会忽略这种边（只求不崩），所以导入边界必须拦，否则悄悄丢语义。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "ghost"
+      ],
+      [
+        "nobody",
+        "a"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "EDGE_ENDPOINT_MISSING",
+        "path": "/edges/0/1"
+      },
+      {
+        "level": "error",
+        "code": "EDGE_ENDPOINT_MISSING",
+        "path": "/edges/1/0"
+      }
+    ]
+  }
+}

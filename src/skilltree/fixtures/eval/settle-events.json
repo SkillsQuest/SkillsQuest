@@ -1,0 +1,148 @@
+{
+  "name": "结算输出的是事件，不是宝石金额",
+  "why": "§3.1 R2：引擎只报「完成了 boss」「跨过成就线」，折算多少账户宝石是宿主策略。awards[].gem 只作为 gemHint 透传，引擎不拿它算钱。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0,
+        "kind": "core"
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ]
+    ],
+    "awards": [
+      {
+        "id": "aw1",
+        "name": "开口",
+        "icon": "medal",
+        "need": 2,
+        "gem": 3
+      },
+      {
+        "id": "aw2",
+        "name": "上路",
+        "icon": "flag",
+        "need": 3,
+        "gem": 5
+      }
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "a"
+      ],
+      "states": {
+        "a": "done",
+        "b": "open",
+        "c": "locked"
+      },
+      "progress": {
+        "count": 1,
+        "earned": 3,
+        "spent": 0,
+        "stars": 3,
+        "level": 1
+      },
+      "settleComplete": {
+        "node": "b",
+        "energy": 2,
+        "events": [
+          {
+            "type": "node-completed",
+            "nodeId": "b",
+            "kind": "core"
+          },
+          {
+            "type": "award-crossed",
+            "awardId": "aw1",
+            "gemHint": 3
+          }
+        ]
+      }
+    },
+    {
+      "done": [
+        "a",
+        "b",
+        "c"
+      ],
+      "states": {
+        "a": "done",
+        "b": "done",
+        "c": "done"
+      },
+      "progress": {
+        "count": 3,
+        "earned": 6,
+        "spent": 0,
+        "stars": 6,
+        "level": 1
+      },
+      "settleUndo": {
+        "node": "a",
+        "cascaded": [
+          "b",
+          "c"
+        ],
+        "energy": 6,
+        "events": [
+          {
+            "type": "node-undone",
+            "nodeId": "a",
+            "kind": "boss"
+          },
+          {
+            "type": "node-undone",
+            "nodeId": "b",
+            "kind": "core"
+          },
+          {
+            "type": "node-undone",
+            "nodeId": "c",
+            "kind": "leaf"
+          },
+          {
+            "type": "award-revoked",
+            "awardId": "aw1",
+            "gemHint": 3
+          },
+          {
+            "type": "award-revoked",
+            "awardId": "aw2",
+            "gemHint": 5
+          }
+        ]
+      }
+    }
+  ]
+}

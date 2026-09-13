@@ -1,0 +1,23 @@
+{
+  "name": "有属性表却没声明 attr/self 是 error（§3.6 双向绑定）",
+  "why": "老客户端按 L2 规则忽略 attrs，就不会去收集用户填的值，于是读属性的条件永远算不出来 —— 与 cond/expr、state/checkin 同一个道理。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "属性" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0 }],
+    "edges": [],
+    "attrs": [{ "key": "str", "name": "力量", "type": "number" }]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "CAPABILITY_NOT_DECLARED",
+        "path": "/requires",
+        "detail": { "capability": "attr/self", "gate": "attrs" }
+      }
+    ]
+  }
+}

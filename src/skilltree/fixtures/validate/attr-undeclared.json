@@ -1,0 +1,32 @@
+{
+  "name": "条件读了一条没在属性表里定义的属性 —— 依赖检查报错",
+  "why": "引用没定义的属性，求值永远是「不知道」、节点永远点不亮，而作者看不到自己少定义了一条。与悬空节点引用同一类错（#174 阶段 3 的依赖检查）。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "属性" },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "gate",
+        "title": "敏捷门",
+        "x": 0,
+        "y": 0,
+        "gate": { "when": { "gte": [{ "get": "attr.dex" }, 10] } }
+      }
+    ],
+    "edges": [],
+    "attrs": [{ "key": "str", "name": "力量", "type": "number" }],
+    "requires": ["cond/expr", "attr/self"]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "COND_ATTR_UNDECLARED",
+        "path": "/nodes/0/gate/when/gte/0",
+        "detail": { "key": "attr.dex", "attr": "dex" }
+      }
+    ]
+  }
+}

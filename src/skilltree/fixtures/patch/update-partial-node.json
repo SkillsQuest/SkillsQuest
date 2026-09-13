@@ -1,0 +1,60 @@
+{
+  "name": "update 只改给出的字段，坐标与其他字段不动",
+  "why": "demo 表达不了「改一个既有节点的 gate」，只能整树替换。而 update 必须是部分更新 —— 改 gate 不该把用户手摆的 x/y 归零。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 120,
+        "y": 340,
+        "kind": "core",
+        "note": "原注释"
+      }
+    ],
+    "edges": []
+  },
+  "patch": {
+    "update": [
+      {
+        "id": "a",
+        "gate": {
+          "cost": 3
+        }
+      }
+    ]
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "日语",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 120,
+          "y": 340,
+          "kind": "core",
+          "note": "原注释",
+          "gate": {
+            "cost": 3
+          }
+        }
+      ],
+      "edges": []
+    }
+  }
+}

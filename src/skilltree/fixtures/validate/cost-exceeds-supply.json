@@ -1,0 +1,56 @@
+{
+  "name": "全树消耗总量超过产出总量是 warning",
+  "why": "资源只由完成节点产出，消耗大于产出时必然有节点永远点不亮（#166 第 1 条）。但作者可能先写消耗、后补节点，所以只警告、不拒收，也不改写文档。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "走不完的树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 120,
+        "y": 0
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 240,
+        "y": 0
+      },
+      {
+        "id": "d",
+        "title": "D",
+        "x": 360,
+        "y": 0,
+        "gate": {
+          "cost": 10
+        }
+      }
+    ],
+    "edges": [],
+    "awards": []
+  },
+  "expect": {
+    "ok": true,
+    "issues": [
+      {
+        "level": "warning",
+        "code": "COST_EXCEEDS_SUPPLY",
+        "path": "/nodes",
+        "detail": {
+          "demand": 10,
+          "supply": 4
+        }
+      }
+    ]
+  }
+}

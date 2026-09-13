@@ -1,0 +1,103 @@
+{
+  "name": "连带取消是不动点迭代，会一路传递下去",
+  "why": "取消 a 之后 b 的前置不成立，b 掉了之后 c 的前置也不成立 —— 必须迭代到收敛，只剔一轮会留下悬空的已完成节点。返回集不含目标节点本身。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0
+      },
+      {
+        "id": "side",
+        "title": "SIDE",
+        "x": 200,
+        "y": 200
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "a",
+        "b",
+        "c",
+        "side"
+      ],
+      "states": {
+        "a": "done",
+        "b": "done",
+        "c": "done",
+        "side": "done"
+      },
+      "progress": {
+        "count": 4,
+        "earned": 4,
+        "spent": 0,
+        "stars": 4,
+        "level": 2
+      },
+      "cascade": {
+        "node": "a",
+        "expect": [
+          "b",
+          "c"
+        ]
+      }
+    },
+    {
+      "done": [
+        "a",
+        "b",
+        "c"
+      ],
+      "states": {
+        "a": "done",
+        "b": "done",
+        "c": "done",
+        "side": "open"
+      },
+      "progress": {
+        "count": 3,
+        "earned": 3,
+        "spent": 0,
+        "stars": 3,
+        "level": 1
+      },
+      "cascade": {
+        "node": "b",
+        "expect": [
+          "c"
+        ]
+      }
+    }
+  ]
+}

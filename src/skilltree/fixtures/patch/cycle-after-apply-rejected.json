@@ -1,0 +1,57 @@
+{
+  "name": "应用后成环则整个 Patch 拒绝，原文档不动",
+  "why": "原子性（§3.4）：Patch 应用后必须过全套语义校验，否则整体拒绝。单看这个 Patch 完全合法，只有和现有边合起来才成环 —— 所以必须在应用后校验。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ]
+    ]
+  },
+  "patch": {
+    "edges": [
+      [
+        "c",
+        "a"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issueCodes": [
+      "GRAPH_HAS_CYCLE"
+    ]
+  }
+}

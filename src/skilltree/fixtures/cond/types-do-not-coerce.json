@@ -1,0 +1,113 @@
+{
+  "name": "大小比较只在数字之间做，布尔不当数字",
+  "why": "Python 的 bool 是 int 的子类（True > 0 成立），TS 那边 typeof true 是 boolean 会走 false 分支 —— 不挡掉两端就不一致。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件用例"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "fire",
+        "title": "火球",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "ice",
+        "title": "冰锥",
+        "x": 100,
+        "y": 0
+      },
+      {
+        "id": "target",
+        "title": "目标",
+        "x": 50,
+        "y": 120,
+        "gate": {
+          "cost": 2
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "cases": [
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "tag.evil": true
+        }
+      },
+      "cond": {
+        "gt": [
+          {
+            "get": "tag.evil"
+          },
+          0
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.name": "5"
+        }
+      },
+      "cond": {
+        "gte": [
+          {
+            "get": "attr.name"
+          },
+          5
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.name": "5"
+        }
+      },
+      "cond": {
+        "eq": [
+          {
+            "get": "attr.name"
+          },
+          "5"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "node": "target",
+      "state": {
+        "ranks": {},
+        "facts": {
+          "attr.str": 14
+        }
+      },
+      "cond": {
+        "eq": [
+          {
+            "get": "attr.str"
+          },
+          14
+        ]
+      },
+      "verdict": true
+    }
+  ]
+}

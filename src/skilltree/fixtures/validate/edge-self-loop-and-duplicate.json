@@ -1,0 +1,54 @@
+{
+  "name": "自环与同向重复边都是 error",
+  "why": "编辑器已拦，但导入路径不可信，必须再拦一次。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "a"
+      ],
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "b"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "EDGE_SELF_LOOP",
+        "path": "/edges/0"
+      },
+      {
+        "level": "error",
+        "code": "EDGE_DUPLICATE",
+        "path": "/edges/2"
+      }
+    ]
+  }
+}

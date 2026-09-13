@@ -1,0 +1,43 @@
+{
+  "name": "用了条件却没声明能力是 error（§3.6 双向绑定）",
+  "why": "不拦的话老引擎按 L2 规则忽略未知字段，于是一道门被当成不存在 —— 静默错误求值，正是能力机制要防的事。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件校验"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 100,
+        "y": 0,
+        "gate": {
+          "when": {
+            "has": [
+              "a"
+            ]
+          }
+        }
+      }
+    ],
+    "edges": []
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "CAPABILITY_NOT_DECLARED",
+        "path": "/requires"
+      }
+    ]
+  }
+}

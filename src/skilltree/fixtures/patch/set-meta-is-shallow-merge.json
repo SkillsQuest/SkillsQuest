@@ -1,0 +1,70 @@
+{
+  "name": "set.meta 是浅合并，其他树级字段整体替换",
+  "why": "只改名字不该把 icon 与 accent 抹掉；而 theme/rules 这类是整体语义单元。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "edges": [],
+    "rules": {
+      "daily": 6,
+      "strict": true
+    }
+  },
+  "patch": {
+    "set": {
+      "meta": {
+        "name": "改名了"
+      },
+      "rules": {
+        "daily": 3
+      },
+      "theme": {
+        "shape": "hex",
+        "edge": "glow",
+        "bg": "grid"
+      }
+    }
+  },
+  "expect": {
+    "ok": true,
+    "doc": {
+      "spec": "skilltree/1",
+      "meta": {
+        "name": "改名了",
+        "icon": "book",
+        "accent": "#f0663f"
+      },
+      "layout": "flow",
+      "nodes": [
+        {
+          "id": "a",
+          "title": "A",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "edges": [],
+      "rules": {
+        "daily": 3
+      },
+      "theme": {
+        "shape": "hex",
+        "edge": "glow",
+        "bg": "grid"
+      }
+    }
+  }
+}

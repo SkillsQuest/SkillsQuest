@@ -1,0 +1,52 @@
+@import "@heroui/react/styles";
+@import "./tree-view/styles.css";
+
+@theme {
+  --font-sans: -apple-system, "SF Pro SC", "PingFang SC", "Segoe UI", system-ui, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  html {
+    touch-action: manipulation;
+  }
+
+  body {
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  :is(input, textarea, [contenteditable]) {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@layer components {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .rise {
+    animation: rise 0.26s ease-out both;
+  }
+}

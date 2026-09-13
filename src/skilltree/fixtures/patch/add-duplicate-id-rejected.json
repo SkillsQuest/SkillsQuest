@@ -1,0 +1,36 @@
+{
+  "name": "新增已存在的 id 直接拒绝，不静默覆盖",
+  "why": "静默覆盖会让「AI 生成的 id 撞上手写节点」表现为用户的节点凭空变样。改既有节点用 update，换掉它用 drop + nodes。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "日语",
+      "icon": "book",
+      "accent": "#f0663f"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 99,
+        "y": 88
+      }
+    ],
+    "edges": []
+  },
+  "patch": {
+    "nodes": [
+      {
+        "id": "a",
+        "title": "偷偷换掉",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "reasonContains": "已存在"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "属性 key 格式非法、树内重复都是 error",
+  "why": "key 是 attr.<key> 的后半段，进条件、进用户填的值表，规则与节点 id 一致：[a-z0-9_-]{1,32}、树内唯一。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "属性" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0 }],
+    "edges": [],
+    "attrs": [
+      { "key": "Str", "name": "力量", "type": "number" },
+      { "key": "dex", "name": "敏捷", "type": "number" },
+      { "key": "dex", "name": "又一个敏捷", "type": "number" }
+    ],
+    "requires": ["attr/self"]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "ATTR_KEY_MALFORMED",
+        "path": "/attrs/0/key",
+        "detail": { "key": "Str" }
+      },
+      {
+        "level": "error",
+        "code": "ATTR_KEY_DUPLICATE",
+        "path": "/attrs/2/key",
+        "detail": { "key": "dex" }
+      }
+    ]
+  }
+}

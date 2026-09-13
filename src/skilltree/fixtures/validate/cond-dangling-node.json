@@ -1,0 +1,50 @@
+{
+  "name": "条件里指向不存在的节点是 error",
+  "why": "与悬空边同一类错。求值时它当「没做」，于是这道门永远关着，而没人会说为什么。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "条件校验"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 100,
+        "y": 0,
+        "gate": {
+          "when": {
+            "oneOf": [
+              "a",
+              "ghost"
+            ]
+          }
+        }
+      }
+    ],
+    "edges": [],
+    "requires": [
+      "cond/expr"
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "COND_NODE_MISSING",
+        "path": "/nodes/1/gate/when/oneOf/1",
+        "detail": {
+          "id": "ghost"
+        }
+      }
+    ]
+  }
+}

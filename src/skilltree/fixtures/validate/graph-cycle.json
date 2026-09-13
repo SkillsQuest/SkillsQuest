@@ -1,0 +1,55 @@
+{
+  "name": "成环是 error",
+  "why": "编辑器目前能连出环（已知缺口），服务端是最后防线。环不只是图难看：互为前置的节点永远 locked，是语义死锁。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ],
+      [
+        "c",
+        "a"
+      ]
+    ]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "GRAPH_HAS_CYCLE",
+        "path": "/edges"
+      }
+    ]
+  }
+}

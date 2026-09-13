@@ -1,0 +1,33 @@
+{
+  "name": "number 的 min > max 是 error，enum 没选项是 warning",
+  "why": "min > max 的属性任何值都落不进区间，是死的，拒收；enum 没填选项可能是作者编辑到一半，warning 让草稿存得下（与 COST_EXCEEDS_SUPPLY 同一取舍）。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "属性" },
+    "layout": "flow",
+    "nodes": [{ "id": "a", "title": "A", "x": 0, "y": 0 }],
+    "edges": [],
+    "attrs": [
+      { "key": "str", "name": "力量", "type": "number", "min": 10, "max": 5 },
+      { "key": "faction", "name": "阵营", "type": "enum" }
+    ],
+    "requires": ["attr/self"]
+  },
+  "expect": {
+    "ok": false,
+    "issues": [
+      {
+        "level": "error",
+        "code": "ATTR_RANGE_INVALID",
+        "path": "/attrs/0",
+        "detail": { "min": 10, "max": 5 }
+      },
+      {
+        "level": "warning",
+        "code": "ATTR_OPTIONS_EMPTY",
+        "path": "/attrs/1/options",
+        "detail": { "key": "faction" }
+      }
+    ]
+  }
+}

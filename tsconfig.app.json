@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "types": ["vite/client", "node"]
+  },
+  "include": ["src"],
+  // 引擎的单测由 `node --test` 直接跑源码（见 package.json 的 test），
+  // 不进这次编译 —— 同上游 `packages/skill-tree` 的 tsconfig
+  "exclude": ["src/**/*.test.ts"]
+}

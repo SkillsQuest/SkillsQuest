@@ -1,0 +1,22 @@
+{
+  "name": "属性表 ＋ 读属性的条件，声明齐全就是干净的",
+  "why": "属性由 attr/self 声明，读它的条件由 cond/expr 声明，两条都齐就不该报任何 issue。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": { "name": "属性" },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "gate",
+        "title": "力量门",
+        "x": 0,
+        "y": 0,
+        "gate": { "when": { "gte": [{ "get": "attr.str" }, 14] } }
+      }
+    ],
+    "edges": [],
+    "attrs": [{ "key": "str", "name": "力量", "type": "number", "min": 1, "max": 20 }],
+    "requires": ["cond/expr", "attr/self"]
+  },
+  "expect": { "ok": true, "issues": [] }
+}

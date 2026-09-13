@@ -1,0 +1,105 @@
+{
+  "name": "树内资源 = earned − spent，纯派生无独立状态",
+  "why": "没有独立余额字段，所以撤销自动回吐、不需要退款逻辑。这是「树是一份自足 JSON + 通用解释器」的关键一环。",
+  "doc": {
+    "spec": "skilltree/1",
+    "meta": {
+      "name": "测试树"
+    },
+    "layout": "flow",
+    "nodes": [
+      {
+        "id": "a",
+        "title": "A",
+        "x": 0,
+        "y": 0,
+        "kind": "boss"
+      },
+      {
+        "id": "b",
+        "title": "B",
+        "x": 200,
+        "y": 0,
+        "kind": "core",
+        "gate": {
+          "cost": 2
+        }
+      },
+      {
+        "id": "c",
+        "title": "C",
+        "x": 400,
+        "y": 0,
+        "gate": {
+          "cost": 3
+        }
+      }
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "c"
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "done": [
+        "a"
+      ],
+      "states": {
+        "a": "done",
+        "b": "open",
+        "c": "locked"
+      },
+      "progress": {
+        "count": 1,
+        "earned": 3,
+        "spent": 0,
+        "stars": 3,
+        "level": 1
+      }
+    },
+    {
+      "done": [
+        "a",
+        "b"
+      ],
+      "states": {
+        "a": "done",
+        "b": "done",
+        "c": "open"
+      },
+      "progress": {
+        "count": 2,
+        "earned": 5,
+        "spent": 2,
+        "stars": 3,
+        "level": 1
+      }
+    },
+    {
+      "done": [
+        "a",
+        "b",
+        "c"
+      ],
+      "states": {
+        "a": "done",
+        "b": "done",
+        "c": "done"
+      },
+      "progress": {
+        "count": 3,
+        "earned": 6,
+        "spent": 5,
+        "stars": 1,
+        "level": 1
+      }
+    }
+  ]
+}
