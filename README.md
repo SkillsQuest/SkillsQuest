@@ -46,23 +46,15 @@
 
 ## 🧩 源码
 
-本仓库同时是 **SkillsQuest 技能树编辑器**的源码仓库。独立的前端工程，不依赖
-SkillsQuest 的服务端：编辑器读写一份 JSON 文档，树存在浏览器本地。
+本仓库同时是 SkillsQuest 技能树编辑器的源码仓库。独立前端工程，不依赖服务端。
 
 ```bash
 npm install
 npm run dev
 ```
 
-需要 Node ≥ 22。详情见 [技能树编辑器](docs/skilltree-editor.md)，
-文档格式见 [`skilltree/1`](docs/skilltree-spec.md)。
-
-授权按 [BSL 1.1](LICENSE)：可自由查看、修改、再分发，个人、教学、研究与
-内部评估可直接使用；**作为商业产品或服务提供给第三方，需要单独的
-Commercial License**。2030-09-13 起自动转为 Apache-2.0。商业授权请开
-[issue](https://github.com/SkillsQuest/SkillsQuest/issues) 或经
-[skillsquest.net](https://skillsquest.net) 联系。
+Node ≥ 22。[技能树编辑器](docs/skilltree-editor.md) · [`skilltree/1` 文档格式](docs/skilltree-spec.md)
 
 ---
 
-© 2026 SkillsQuest. 保留所有权利。本仓库的代码按 [BSL 1.1](LICENSE) 授权。
+代码按 [BSL 1.1](LICENSE) 授权 · © 2026 SkillsQuest

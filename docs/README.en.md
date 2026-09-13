@@ -46,28 +46,16 @@ Checksums: `shasum -a 256 -c SHA256SUMS --ignore-missing`
 
 ## 🧩 Source
 
-This repository is also the source repository of the **SkillsQuest Skill Tree
-Editor**. A standalone front-end project with no dependency on the SkillsQuest
-backend: the editor reads and writes one JSON document, and trees are kept in
-the browser.
+This repository is also the source repository of the SkillsQuest Skill Tree
+Editor. A standalone front-end project with no backend.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Node ≥ 22. See [Skill Tree Editor](skilltree-editor.en.md) for details and
-[`skilltree/1`](skilltree-spec.md) for the format.
-
-Licensed under [BSL 1.1](../LICENSE): free to read, modify and redistribute, and
-free to use for personal, educational, research and internal evaluation
-purposes. **Offering it to third parties as part of a commercial product or
-service requires a separate commercial license.** On 2030-09-13 it converts to
-Apache-2.0. For commercial licensing, open an
-[issue](https://github.com/SkillsQuest/SkillsQuest/issues) or reach us via
-[skillsquest.net](https://skillsquest.net).
+Node ≥ 22. [Skill Tree Editor](skilltree-editor.en.md) · [`skilltree/1` format](skilltree-spec.md)
 
 ---
 
-© 2026 SkillsQuest. All rights reserved. The code in this repository is licensed
-under [BSL 1.1](../LICENSE).
+Code licensed under [BSL 1.1](../LICENSE) · © 2026 SkillsQuest
