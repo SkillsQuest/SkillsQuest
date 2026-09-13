@@ -15,7 +15,7 @@ Learn new skills by unlocking a skill tree. Master what stays human.
 
 </div>
 
-> This repository distributes builds, collects feedback, and publishes the source of the skill tree editor and the `skilltree/1` document format.
+> This repository distributes builds, collects feedback, and publishes the source of the skill tree editor.
 
 ## ⬇️ Download
 
@@ -47,9 +47,8 @@ Checksums: `shasum -a 256 -c SHA256SUMS --ignore-missing`
 ## 🧩 Source
 
 This repository is also the source repository of the **SkillsQuest Skill Tree
-Editor**: the `skilltree/1` document format, its engine, and the canvas that
-edits it. A standalone front-end project with no dependency on the SkillsQuest
-backend — the editor reads and writes one JSON document, and trees are kept in
+Editor**. A standalone front-end project with no dependency on the SkillsQuest
+backend: the editor reads and writes one JSON document, and trees are kept in
 the browser.
 
 ```bash
