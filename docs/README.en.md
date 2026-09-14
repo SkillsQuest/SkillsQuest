@@ -7,7 +7,7 @@
 
 # SkillsQuest
 
-![Desktop](https://img.shields.io/badge/Desktop-Windows%20%7C%20macOS%20%7C%20Linux-purple?style=flat&logo=tauri&logoColor=white) ![Mobile](https://img.shields.io/badge/Mobile-Android%20%7C%20iOS-00A98F?style=flat&logo=react&logoColor=white)
+![Desktop](https://img.shields.io/badge/Desktop-Windows%20%7C%20macOS%20%7C%20Linux-purple?style=flat&logo=tauri&logoColor=white) ![Mobile](https://img.shields.io/badge/Mobile-Android%20%7C%20iOS-00A98F?style=flat&logo=react&logoColor=white) [![Web](https://img.shields.io/badge/Web-Browser-4285F4?style=flat&logo=googlechrome&logoColor=white)](https://skillsquest.app)
 
 Learn new skills by unlocking a skill tree. Master what stays human.
 
@@ -27,8 +27,8 @@ Learn new skills by unlocking a skill tree. Master what stays human.
 | ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-arm64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM devices |
 | ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Apple silicon (recommended) |
 | ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Intel |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.AppImage](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Generic (recommended) |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-arm64.AppImage](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM devices |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) · [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | x64 (recommended) |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) · [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM devices |
 | ![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=flat&logo=android&logoColor=white) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Recent devices (recommended) |
 | ![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | If arm64 won't install |
 | ![iOS](https://img.shields.io/badge/iOS-TestFlight-000000?style=flat&logo=apple&logoColor=white) | — |  |
@@ -38,7 +38,7 @@ Learn new skills by unlocking a skill tree. Master what stays human.
 
 - **Windows**: unsigned — SmartScreen will warn, choose More info → Run anyway
 - **macOS**: unsigned — right-click → Open the first time, or `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app`
-- **Linux**: `chmod +x` the AppImage
+- **Linux**: `.deb` for Debian/Ubuntu, `.rpm` for Fedora/openSUSE — install either with your package manager
 - **Android**: allow installing from unknown sources
 - **iOS**: the `.ipa` is an App Store submission build and cannot be installed on a device — open an issue for a TestFlight invite
 
