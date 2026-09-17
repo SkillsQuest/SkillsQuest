@@ -21,15 +21,14 @@
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkillsQuest/SkillsQuest?style=flat)](https://github.com/SkillsQuest/SkillsQuest/releases/latest)
 
-| 平台 | x64 架构 | ARM 架构 | 商店 | 说明 |
-| --- | --- | --- | --- | --- |
-| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-x64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [windows-arm64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Windows 设备上 x64 更常见 |
-| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | — | Apple 芯片（ARM）更常见 |
-| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | — | — | App Store（进行中） | — |
-| ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | — | arm64 装不上时用通用包 |
-| ![Linux DEB](https://img.shields.io/badge/Linux%20DEB-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Debian / Ubuntu |
-| ![Linux RPM](https://img.shields.io/badge/Linux%20RPM-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Fedora / RHEL |
-| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | — | — | [skillsquest.app](https://skillsquest.app) | 打开即用 |
+| 平台 | 下载 |
+| --- | --- |
+| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | [访问官网](https://skillsquest.net) |
 
 ## 🚀 安装说明
 
