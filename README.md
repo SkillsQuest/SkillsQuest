@@ -27,9 +27,9 @@
 | ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | — | Apple 芯片（ARM）更常见 |
 | ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | — | — | App Store（进行中） | — |
 | ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | — | arm64 装不上时用通用包 |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) Linux DEB | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Debian / Ubuntu |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) Linux RPM | [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Fedora / RHEL |
-| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | — | — | — | [skillsquest.app](https://skillsquest.app) |
+| ![Linux DEB](https://img.shields.io/badge/Linux%20DEB-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Debian / Ubuntu |
+| ![Linux RPM](https://img.shields.io/badge/Linux%20RPM-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Fedora / RHEL |
+| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | — | — | [skillsquest.app](https://skillsquest.app) | 打开即用 |
 
 ## 🚀 安装说明
 
