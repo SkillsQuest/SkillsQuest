@@ -21,24 +21,21 @@
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkillsQuest/SkillsQuest?style=flat)](https://github.com/SkillsQuest/SkillsQuest/releases/latest)
 
-| 平台 | 安装包 | 说明 |
-| --- | --- | --- |
-| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-x64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | 安装程序（推荐） |
-| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-arm64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM 设备 |
-| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Apple 芯片（推荐） |
-| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Intel 芯片 |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) · [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | x64（推荐） |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) · [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM 设备 |
-| ![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=flat&logo=android&logoColor=white) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | 新机型（推荐） |
-| ![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | arm64 装不上时用 |
-| ![iOS](https://img.shields.io/badge/iOS-TestFlight-000000?style=flat&logo=apple&logoColor=white) | — |  |
-| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | [skillsquest.app](https://skillsquest.app) |  |
+| 平台 | x64 架构 | ARM 架构 | 商店 | 说明 |
+| --- | --- | --- | --- | --- |
+| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-x64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [windows-arm64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Windows 设备上 x64 更常见 |
+| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | — | Apple 芯片（ARM）更常见 |
+| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | — | — | App Store（进行中） | — |
+| ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | — | arm64 装不上时用通用包 |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) Linux DEB | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Debian / Ubuntu |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) Linux RPM | [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest)（推荐） | [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Fedora / RHEL |
+| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | — | — | — | [skillsquest.app](https://skillsquest.app) |
 
 ## 🚀 安装说明
 
 - **Windows**：未签名，SmartScreen 会拦，点「更多信息」→「仍要运行」
 - **macOS**：未签名，首次打开右键点图标选「打开」，或 `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app`
-- **Linux**：`.deb` 给 Debian / Ubuntu 系，`.rpm` 给 Fedora / openSUSE 系，都用包管理器装
+- **Linux**：`.deb` 给 Debian / Ubuntu 系，`.rpm` 给 Fedora / RHEL / openSUSE 系，都用包管理器装
 - **Android**：允许安装未知来源的应用
 - **iOS**：Release 里的 `.ipa` 是 App Store 提交产物，装不进设备，开 issue 要 TestFlight 邀请
 

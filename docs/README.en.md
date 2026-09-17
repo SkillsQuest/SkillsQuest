@@ -21,24 +21,21 @@ Learn new skills by unlocking a skill tree. Master what stays human.
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkillsQuest/SkillsQuest?style=flat)](https://github.com/SkillsQuest/SkillsQuest/releases/latest)
 
-| Platform | Build | Notes |
-| --- | --- | --- |
-| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-x64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Installer (recommended) |
-| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-arm64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM devices |
-| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Apple silicon (recommended) |
-| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Intel |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) · [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | x64 (recommended) |
-| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) · [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | ARM devices |
-| ![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=flat&logo=android&logoColor=white) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | Recent devices (recommended) |
-| ![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | If arm64 won't install |
-| ![iOS](https://img.shields.io/badge/iOS-TestFlight-000000?style=flat&logo=apple&logoColor=white) | — |  |
-| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | [skillsquest.app](https://skillsquest.app) |  |
+| Platform | x64 | ARM | Store | Notes |
+| --- | --- | --- | --- | --- |
+| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [windows-x64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) (recommended) | [windows-arm64.exe](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Most Windows devices are x64 |
+| ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [macos-x64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [macos-arm64.dmg](https://github.com/SkillsQuest/SkillsQuest/releases/latest) (recommended) | — | Apple silicon (ARM) is more common |
+| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | — | — | App Store (in review) | — |
+| ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [android-universal.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | [android-arm64.apk](https://github.com/SkillsQuest/SkillsQuest/releases/latest) (recommended) | — | Use the universal build if arm64 won't install |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) Linux DEB | [linux-x64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) (recommended) | [linux-arm64.deb](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Debian / Ubuntu |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) Linux RPM | [linux-x64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) (recommended) | [linux-arm64.rpm](https://github.com/SkillsQuest/SkillsQuest/releases/latest) | — | Fedora / RHEL |
+| ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | — | — | — | [skillsquest.app](https://skillsquest.app) |
 
 ## 🚀 Installing
 
 - **Windows**: unsigned — SmartScreen will warn, choose More info → Run anyway
 - **macOS**: unsigned — right-click → Open the first time, or `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app`
-- **Linux**: `.deb` for Debian/Ubuntu, `.rpm` for Fedora/openSUSE — install either with your package manager
+- **Linux**: `.deb` for Debian/Ubuntu, `.rpm` for Fedora/RHEL/openSUSE — install either with your package manager
 - **Android**: allow installing from unknown sources
 - **iOS**: the `.ipa` is an App Store submission build and cannot be installed on a device — open an issue for a TestFlight invite
 
