@@ -44,7 +44,15 @@ npm install
 npm run dev
 ```
 
-Node ≥ 22. [Skill Tree Editor](skilltree-editor.en.md) · [`skilltree/1` format](skilltree-spec.md)
+Node ≥ 22.
+
+![Skill Tree Editor](images/editor-en.png)
+
+That is `npm run dev`, open on SkillsQuest's Full-stack tree: 21 nodes and
+three awards. Drag nodes and draw edges on the canvas; set the icon, gate,
+unlock conditions and prerequisites on the right.
+
+[Skill Tree Editor](skilltree-editor.en.md) · [`skilltree/1` format](skilltree-spec.md)
 
 ---
 

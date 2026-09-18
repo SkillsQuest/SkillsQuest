@@ -43,7 +43,14 @@ npm install
 npm run dev
 ```
 
-Node ≥ 22。[技能树编辑器](docs/skilltree-editor.md) · [`skilltree/1` 文档格式](docs/skilltree-spec.md)
+Node ≥ 22。
+
+![技能树编辑器](docs/images/editor-zh.png)
+
+上图是 `npm run dev` 跑起来的样子，打开的是 SkillsQuest 的「全栈」技能树：
+21 个节点、三档奖励。左边画布拖点连线，右边改图标、卡点、解锁条件与前置。
+
+[技能树编辑器](docs/skilltree-editor.md) · [`skilltree/1` 文档格式](docs/skilltree-spec.md)
 
 ---
 
