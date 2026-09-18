@@ -25,20 +25,14 @@ Learn new skills by unlocking a skill tree. Master what stays human.
 | --- | --- |
 | ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [Download](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
 | ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [Download](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
-| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | [Download](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | [App Store](https://apps.apple.com/app/id6806820314) |
 | ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [Download](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
 | ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [Download](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
 | ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | [Visit the website](https://skillsquest.net) |
 
 ## 🚀 Installing
 
-- **Windows**: unsigned — SmartScreen will warn, choose More info → Run anyway
-- **macOS**: unsigned — right-click → Open the first time, or `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app`
-- **Linux**: `.deb` for Debian/Ubuntu, `.rpm` for Fedora/RHEL/openSUSE — install either with your package manager
-- **Android**: allow installing from unknown sources
-- **iOS**: the `.ipa` is an App Store submission build and cannot be installed on a device — open an issue for a TestFlight invite
-
-Checksums: `shasum -a 256 -c SHA256SUMS --ignore-missing`
+- **macOS**: a system restriction means the app won't launch until you run `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app` in Terminal after installing.
 
 ## 🧩 Source
 

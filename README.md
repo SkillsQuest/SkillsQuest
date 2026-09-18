@@ -25,20 +25,14 @@
 | --- | --- |
 | ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
 | ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
-| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
+| ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white) | [App Store](https://apps.apple.com/app/id6806820314) |
 | ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
 | ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) | [下载](https://github.com/SkillsQuest/SkillsQuest/releases/latest) |
 | ![Web](https://img.shields.io/badge/Web-4285F4?style=flat&logo=googlechrome&logoColor=white) | [访问官网](https://skillsquest.net) |
 
 ## 🚀 安装说明
 
-- **Windows**：未签名，SmartScreen 会拦，点「更多信息」→「仍要运行」
-- **macOS**：未签名，首次打开右键点图标选「打开」，或 `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app`
-- **Linux**：`.deb` 给 Debian / Ubuntu 系，`.rpm` 给 Fedora / RHEL / openSUSE 系，都用包管理器装
-- **Android**：允许安装未知来源的应用
-- **iOS**：Release 里的 `.ipa` 是 App Store 提交产物，装不进设备，开 issue 要 TestFlight 邀请
-
-校验：`shasum -a 256 -c SHA256SUMS --ignore-missing`
+- **macOS**：由于系统限制，需要在安装后，在终端输入 `xattr -dr com.apple.quarantine /Applications/SkillsQuest.app` 才能正常运行。
 
 ## 🧩 源码
 
